@@ -196,13 +196,21 @@ function updateView(){//handlers view
 
 }
 
+/**
+ * Main function to start a new oscillator
+ **/
 function start(n){
   //if(n==null||n==undefined){n=3}
+  // Oculta dialogo
   window.document.getElementById('startPoint').style.display="none";
+  // Muestra el instrumento '.sliders'
   window.document.getElementById('sliders').style.display="inline";
-  console.log("voy a hacer "+n+" estrellas")
+
+  console.log("voy a hacer "+n+" osciloscopios/estrellas");
+
   numStars=n;
   info();
+
   for (let i = 0; i < numStars; i++) {
     creaNota(i);
     console.log("hago star: "+parseInt(i))
