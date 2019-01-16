@@ -1,0 +1,15 @@
+header {}
+footer {}
+main {}
+
+/* The canvas */
+/* Canvas wrapper container */
+.canvas-wrapper {}
+canvas {
+}
+
+input[type="range"] {
+}
+
+/* The slider wrapper */
+#sliders {}

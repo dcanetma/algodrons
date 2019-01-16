@@ -1,0 +1,73 @@
+<html>
+<title>AlgoDrone</title>
+<link rel="stylesheet" type="text/css" href="micss.css"></link>
+<body>
+
+<canvas ID="micanvas"></canvas>
+
+<div ID="startPoint">
+
+  <div class="dropdown">
+    Welcome to AlgoDrone
+    <br>
+    Simple additive Drone music with your browser.
+    <br>
+    find the code <a href="https://github.com/alfonsofonso/algodrons">here</a>
+    <br>
+    Number of oscillators:
+    <br>
+    <div class="dropdown-content">
+      <br>
+      <button class="elige" onclick="start(1)">1</button>
+      <button class="elige" onclick="start(2)">2</button>
+      <button class="elige" onclick="start(3)">3</button>
+      <button class="elige" onclick="start(4)">4</button>
+      <button class="elige" onclick="start(5)">5</button>
+      <button class="elige" onclick="start(6)">6</button>
+    </div>
+  </div>
+
+</div>
+
+<div id="sliders">
+
+    <div ID="VolCont" class="cont">
+      <div class="param">Volume: </div><div class="param">0</div>
+      <input name="1" value="0" ID="Vol" max="1" min="0" step="0.01" onmousedown="learn(this)" oninput="cambiaVolumenAbs(this.value)" onmouseup="stopLearn()" type="range">
+    </div>
+  <div ID="FreqCont" class="cont">
+    <div class="param">Tone (Hz): </div><div class="param">256</div>
+    <input name="2" ID="Freq" max="440" min="0" step="0.1" onmousedown="learn(this)" oninput="cambiaFrecuenciaAbs(this.value)" onmouseup="stopLearn()" type="range">
+  </div>
+
+  <div ID="LFOFreqCont" class="cont">
+    <div class="param">Rythm: </div><div class="param">0</div>
+    <input name="4" value="1"  ID="LFOfreq" max="2" step="0.001" min="0" onmousedown="learn(this)" oninput="cambiaFrecuenciaLFOAbs(this.value)" onmouseup="stopLearn()" type="range">
+  </div>
+
+    <br>
+<div ID="PanCont" class="cont">
+    <div>Panorama</div><input name="6" ID="Pan" max="1" min="-1" step="0.01" onmousedown="learn(this)" oninput="paneaAbs(this.value)" onmouseup="stopLearn()" type="range"><output>0<output>
+  </div>
+  <div ID="xxxCont" class="cont">
+    <div>xxx</div><input name="7" ID="xxx" onmousedown="learn(this)" oninput="rota(this.value)" onmouseup="stopLearn()" type="range"></input>
+  </div>
+
+</div>
+
+<button ID="savefile">guardar</button>
+<button type="button" ID="infoB"  onclick="showInfo()" >midi</button>
+<button class="info" type="button" ID="pads" onmousedown="learnPadChannel(this)" onchange="asigna(this.value)" >LearnPadChannel</button>
+<button class="info" type="button" ID="knobs" onmousedown="learnKnobChannel(this)" onchange="asigna(this.value)" >LearnKnobsChannel</button>
+
+
+<div class="info">First clic the learnPadChannel button and push a pad on your controller, then the same with the learnKnobChannel, last click and hold each one of the 1-8 buttons and 1-8 sliders then push/rotate your midi controller correspondent button/knobs to MIDI Learn, release it and that's it! Stil working on encoders though (non-infinite knobs) </div>
+
+<div class="info">... or open de console for more info<div>
+</body>
+<script src="js/easeljs-NEXT.combined.js"></script>
+<script src="js/tweenjs-NEXT.combined.js"></script>
+<script src="midi.js"></script>
+<script src="starfield.js"></script>
+<script src="algodrone.js"></script>
+</html>
